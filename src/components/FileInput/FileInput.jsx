@@ -5,7 +5,7 @@ import { ACTIONS_TYPES } from '../../store/actions';
 
 import './fileInput.less';
 
-const SelectFile = forwardRef(({}, ref) => {
+const FileInput = forwardRef(({}, ref) => {
     const { updateState } = useContext(ImagesContext);
 
     async function handleChangeFiles(event) {
@@ -32,4 +32,4 @@ const SelectFile = forwardRef(({}, ref) => {
     );
 });
 
-export default SelectFile;
+export default FileInput;
