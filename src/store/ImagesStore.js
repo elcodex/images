@@ -1,18 +1,30 @@
-import React from 'react';
+import { useEffect, createContext, useReducer } from 'react';
 import PropTypes from 'prop-types';
 import { ACTIONS } from './actions';
 
-const initialState = {
-    images: [],
-    width: 800
-}
+export const ImagesContext = createContext();
 
-export const ImagesContext = React.createContext();
+export function ImagesContextProvider({ containerId, children }) {
+    const container = document.getElementById(containerId);
+    const [state, updateState] = useReducer(dispatch, {
+        images: [],
+        screenWidth: container.clientWidth
+    });
 
-export function ImagesContextProvider({ children }) {
-    const [state, updateState] = React.useReducer(dispatch, initialState);
+    function handleResize() {
+        const width = Number(container.clientWidth);
+        updateState({type: 'update', payload: width});
+    }
     
-    console.log(state);
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+        window.addEventListener('orientationchange', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('orientationchange', handleResize);
+        }
+    }, []);
 
     return (
         <ImagesContext.Provider value={{state, updateState}}>
@@ -22,6 +34,7 @@ export function ImagesContextProvider({ children }) {
 }
 
 ImagesContextProvider.propTypes = {
+    containerId: PropTypes.string.isRequired,
     children: PropTypes.node
 }
 
