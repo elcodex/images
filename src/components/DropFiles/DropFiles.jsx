@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { ImagesContext } from '../../store/ImagesStore';
 import { ACTIONS_TYPES } from '../../store/actions';
@@ -48,8 +48,20 @@ export default function DropFiles({ children }) {
         setIsDragEnter(false);
     }
 
+    function getClassNames() {
+        let classNames = ['drop-files'];
+        if (isDragEnter) {
+            classNames.push('drop-files_drag');
+        }
+        if (state.images.length === 0) {
+            classNames.push('drop-files_flex');
+        }
+
+        return classNames.join(' ');
+    }
+
     return (
-        <div className={isDragEnter ? "drop-files drop-files_drag" : "drop-files"}
+        <div className={getClassNames()}
             onDrop={handleDropFiles} 
             onDragEnter={handleDragEnter}
             onDragLeave={handleDragLeave}
