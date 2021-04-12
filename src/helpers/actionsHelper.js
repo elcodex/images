@@ -9,7 +9,6 @@ export function isRowFull(row, screenWidth) {
 }
 
 export function createRows(images, screenWidth) {
-    console.log('append', screenWidth, images);
     let i = 0,
         allHeights = [],
         rows = [];
