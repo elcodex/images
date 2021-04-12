@@ -1,0 +1,20 @@
+@initial-height: 80vh;
+@border-color-drag: #000000;
+
+.drop-files {
+    min-height: @initial-height;
+    width: 100%;
+    border: 2px dashed transparent;
+
+    &.drop-files_drag {
+        opacity: 0.5;
+        border-color: @border-color-drag;
+    }
+
+    .drop-files__placeholder {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
