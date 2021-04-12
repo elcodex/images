@@ -1,6 +1,7 @@
-import { useContext, forwardRef } from 'react';
+import React, { useContext, forwardRef } from 'react';
 import { ImagesContext } from '../../store/ImagesStore';
 import { getImages } from '../../helpers/parseHelper';
+import { ACTIONS_TYPES } from '../../store/actions';
 
 import './fileInput.less';
 
@@ -12,7 +13,7 @@ const SelectFile = forwardRef(({}, ref) => {
             const files = event.target.files;
             try {
                 const images = await getImages(files);
-                updateState({type: 'append', payload: images});
+                updateState({type: ACTIONS_TYPES.APPEND, payload: images});
             } catch(error) {
                 console.log(error.message);
             }
