@@ -1,4 +1,4 @@
-import { createRows, isRowFull } from '..helpers/actionsHelper';
+import { createRows, isRowFull } from '../helpers/actionsHelper';
 
 export const ACTIONS_TYPES = {
     APPEND: 'append',
