@@ -1,6 +1,6 @@
-import { useEffect, createContext, useReducer } from 'react';
+import React, { useEffect, createContext, useReducer } from 'react';
 import PropTypes from 'prop-types';
-import { ACTIONS } from './actions';
+import { ACTIONS, ACTIONS_TYPES } from './actions';
 
 export const ImagesContext = createContext();
 
@@ -13,7 +13,7 @@ export function ImagesContextProvider({ containerId, children }) {
 
     function handleResize() {
         const width = Number(container.clientWidth);
-        updateState({type: 'update', payload: width});
+        updateState({type: ACTIONS_TYPES.UPDATE, payload: width});
     }
     
     useEffect(() => {
