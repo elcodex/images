@@ -1,11 +1,8 @@
 const MAX_HEIGHT = 350;
-
-function sumItems(items, callback) {
-    return items.reduce(callback, 0);
-}
+const GAP = 20;
 
 export function isRowFull(row, screenWidth) {
-    return sumItems(row, (sum, {rowWidth}) => sum + rowWidth) >= screenWidth;
+    return row.reduce((sum, {rowWidth}) => sum + rowWidth, 0) >= screenWidth - (GAP * row.length);
 }
 
 export function createRows(images, screenWidth) {
@@ -18,7 +15,9 @@ export function createRows(images, screenWidth) {
         let rowImages = [];
         do {
             rowImages.push(images[i]);
-            rowHeight = screenWidth / sumItems(rowImages, (sum, img) => sum + img.width / img.height);
+            const widthsSum = rowImages.reduce((sum, img) => sum + img.width / img.height, 0);
+            const gaps = GAP * rowImages.length;
+            rowHeight = (screenWidth - gaps) / widthsSum;
             i++;
         } while (i < images.length && (rowHeight > MAX_HEIGHT));
 
