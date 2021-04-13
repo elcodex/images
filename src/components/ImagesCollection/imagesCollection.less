@@ -1,17 +1,59 @@
+@container-background-color: #cbcdcf;
+@button-background-color: #ffffff;
+
 .images {
+    .images__remove-mode {
+        margin-left: 0.5rem;
+        cursor: pointer;
+
+        .mode__checkbox {
+            appearance: none;
+            width: 0.7rem;
+            height: 0.7rem;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+            border: 1px solid #333333;
+            background-color: #ffffff;
+
+            &:checked {
+                background-color: #a8181f;
+            }
+        }
+    }
     
     .images__row {
         display: flex;
         flex-direction: row;
+        margin: 0.5rem 0;
 
         .images__container {
-            margin: 0.5rem;
+            flex-shrink: 0;
+            margin: 0 0.5rem;
             padding: 0;
-            background-color: #cbcdcf;
+            background-color: @container-background-color;
 
-            .images__image {
+            position: relative;
+
+            .container__image {
                 width: 100%;
                 height: 100%;
+            }
+
+            .container__button-remove {
+                display: block;
+                opacity: 0.9;
+                border: 1px solid @button-background-color;
+                position: absolute;
+                top: 0;
+                right: 0;
+
+                &.button_hidden {
+                    display: none;
+                }
+
+                &:hover {
+                    opacity: 1;
+                }
             }
         }
     }

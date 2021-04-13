@@ -3,13 +3,15 @@ import { createRows, isRowFull } from '../helpers/actionsHelper';
 export const ACTIONS_TYPES = {
     APPEND: 'append',
     UPDATE: 'update',
-    CLEAR: 'clear'
+    CLEAR: 'clear',
+    REMOVE: 'remove'
 }
 
 export const ACTIONS = {
     [ACTIONS_TYPES.APPEND]: appendImages,
     [ACTIONS_TYPES.UPDATE]: updateScreenWidth,
-    [ACTIONS_TYPES.CLEAR]: clearImages
+    [ACTIONS_TYPES.CLEAR]: clearImages,
+    [ACTIONS_TYPES.REMOVE]: removeImage
 }
 
 function appendImages(state, newImages) {
@@ -51,5 +53,18 @@ function clearImages(state) {
     return {
         ...state,
         images: []
+    }
+}
+
+function removeImage(state, {row, column}) {
+    const oldRows = state.images.slice(0, row);
+    const newRows = createRows(
+        [...state.images[row].filter((_, i) => i !== column), ...state.images.slice(row + 1).flat(1)],
+        state.screenWidth
+    );
+
+    return {
+        ...state,
+        images: [...oldRows, ...newRows]
     }
 }
