@@ -1,19 +1,26 @@
+@import '../../css/variables.less';
+
 .input-url {
-    margin: 0.5rem 0;
+    margin: 1rem 0 0.5rem;
     
     .input-url__input {
         box-sizing: border-box;
         line-height: 1.45;
         font-size: 1rem;
-        padding: 0.5rem 0.3rem;
+        padding: 0.5rem 0.7rem;
+        margin-top: 0.5rem;
         
         display: block;
         width: 100%;
+
+        background-color: @form-background-color;
+        box-shadow: none;
+        border: 1px solid @primary-color;
     }
 
     .input-url__error {
         min-height: calc(0.7rem * 1.45);
         font-size: 0.7rem;
-        color: #a8181f;
+        color: @danger-color;
     }
 }

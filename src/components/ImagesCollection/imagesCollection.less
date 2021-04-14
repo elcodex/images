@@ -1,5 +1,4 @@
-@container-background-color: #cbcdcf;
-@button-background-color: #ffffff;
+@import '../../css/variables.less';
 
 .images {
     .images__remove-mode {
@@ -12,11 +11,11 @@
             height: 0.7rem;
             margin-right: 0.5rem;
             vertical-align: middle;
-            border: 1px solid #333333;
-            background-color: #ffffff;
+            border: 1px solid @primary-color;
+            background-color: @form-background-color;
 
             &:checked {
-                background-color: #a8181f;
+                background-color: @danger-color;
             }
         }
     }
@@ -30,7 +29,7 @@
             flex-shrink: 0;
             margin: 0 0.5rem;
             padding: 0;
-            background-color: @container-background-color;
+            background-color: @image-container-background-color;
 
             position: relative;
 
@@ -42,7 +41,10 @@
             .container__button-remove {
                 display: block;
                 opacity: 0.9;
-                border: 1px solid @button-background-color;
+                border: 1px solid @form-background-color;
+                color: @danger-color;
+                background-color: @form-background-color;
+
                 position: absolute;
                 top: 0;
                 right: 0;
@@ -51,8 +53,11 @@
                     display: none;
                 }
 
-                &:hover {
+                &:hover, &:active, &:focus {
                     opacity: 1;
+                    border: 1px solid @danger-color;
+                    color: @form-background-color;
+                    background-color: @danger-color;
                 }
             }
         }

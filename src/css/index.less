@@ -1,3 +1,6 @@
+@import './buttons.less';
+@import './variables.less';
+
 html {
     font-size: 20px;
     height: 100%;
@@ -9,15 +12,14 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #f6f6f6;
-    color: #333333;
+    background-color: @default-background-color;
+    color: @primary-color;
 
     font-family: "PT Sans", "Segoe UI", "Verdana", "Helvetica", sans;
 }
 
 #container {
-    max-width: 860px;
-    min-width: 320px;
+    max-width: @max-container-width;
     min-height: 90%;
 
     margin: 0 auto;
@@ -26,7 +28,7 @@ body {
     flex-direction: column;
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: @max-container-width) {
     #container {
         margin: 0 1rem;
     }
