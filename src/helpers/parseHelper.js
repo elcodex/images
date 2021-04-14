@@ -36,7 +36,7 @@ function getImageSize(url) {
     });
 }
 
-async function getImageProperties(img) {
+export async function getImageProperties(img) {
     let url, width, height;
     if (img instanceof File) {
         URL.revokeObjectURL(img);
