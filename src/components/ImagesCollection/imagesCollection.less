@@ -1,21 +1,28 @@
 @import '../../css/variables.less';
 
 .images {
-    .images__remove-mode {
-        margin-left: 0.5rem;
-        cursor: pointer;
+    .images__settings {
+        display: flex;
+        justify-content: flex-end;
+        align-items: baseline;
+        margin: 0 0.3rem;
+    
+        .settings__remove-mode {
+            cursor: pointer;
+            margin-right: 1rem;
+            
+            .remove-mode__checkbox {
+                appearance: none;
+                width: 0.7rem;
+                height: 0.7rem;
+                margin-right: 0.5rem;
+                vertical-align: middle;
+                border: 1px solid @control-border-color;
+                background-color: @control-background-color;
 
-        .mode__checkbox {
-            appearance: none;
-            width: 0.7rem;
-            height: 0.7rem;
-            margin-right: 0.5rem;
-            vertical-align: middle;
-            border: 1px solid @primary-color;
-            background-color: @form-background-color;
-
-            &:checked {
-                background-color: @danger-color;
+                &:checked {
+                    background-color: @danger-color;
+                }
             }
         }
     }
@@ -41,9 +48,9 @@
             .container__button-remove {
                 display: block;
                 opacity: 0.9;
-                border: 1px solid @form-background-color;
+                border: 1px solid @control-border-color;
                 color: @danger-color;
-                background-color: @form-background-color;
+                background-color: @control-background-color;
 
                 position: absolute;
                 top: 0;
@@ -56,7 +63,7 @@
                 &:hover, &:active, &:focus {
                     opacity: 1;
                     border: 1px solid @danger-color;
-                    color: @form-background-color;
+                    color: @control-background-color;
                     background-color: @danger-color;
                 }
             }
