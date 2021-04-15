@@ -28,6 +28,7 @@ const FileInput = forwardRef(({}, ref) => {
             ref={ref} 
             multiple={true}
             onChange={handleChangeFiles}
+            tabIndex={-1}
         />
     );
 });
