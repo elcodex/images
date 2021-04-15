@@ -1,4 +1,4 @@
-import { createRows, isRowFull } from '../helpers/actionsHelper';
+import { createRows, isRowFull } from '../logic/rows';
 
 export const ACTIONS_TYPES = {
     APPEND: 'append',

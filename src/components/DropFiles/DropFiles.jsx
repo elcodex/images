@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { ImagesContext } from '../../store/ImagesStore';
 import { ACTIONS_TYPES } from '../../store/actions';
-import { getImages } from '../../helpers/parseHelper';
+import { getImages } from '../../logic/imageParser';
 
 import './dropFiles.less';
 

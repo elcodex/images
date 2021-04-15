@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { ACTIONS_TYPES } from '../../store/actions';
 import { ImagesContext } from '../../store/ImagesStore';
-import { getImageProperties } from '../../helpers/parseHelper';
+import { getImageProperties } from '../../logic/imageParser';
 import { ButtonUpload } from '../index';
 
 import './uploadPanel.less';

@@ -1,6 +1,6 @@
 import React, { useContext, forwardRef } from 'react';
 import { ImagesContext } from '../../store/ImagesStore';
-import { getImages } from '../../helpers/parseHelper';
+import { getImages } from '../../logic/imageParser';
 import { ACTIONS_TYPES } from '../../store/actions';
 
 import './fileInput.less';
