@@ -1,11 +1,11 @@
 import React from 'react';
 import { ImagesContextProvider } from './store/ImagesStore';
-import { Gallery, LoadPanel } from './components';
+import { Gallery, UploadPanel } from './components';
 
 export default function App() {
     return (
         <ImagesContextProvider containerId="container">
-            <LoadPanel />
+            <UploadPanel />
             <Gallery />
         </ImagesContextProvider>
     )
