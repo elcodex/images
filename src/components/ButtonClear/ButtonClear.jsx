@@ -14,7 +14,7 @@ export default function ClearButton() {
     }
     return (
         <div>
-            <button className="button button-clear" onClick={handleClick}>
+            <button className="settings__button-clear button control" onClick={handleClick}>
                 Clear
             </button>
         </div>
