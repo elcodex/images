@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import FileInput from '../FileInput/FileInput';
 
-import './buttonAddFiles.less';
+import './buttonUpload.less';
 
 export default function SelectFilesButton() {
     const fileInputRef = useRef(null);
@@ -13,8 +13,8 @@ export default function SelectFilesButton() {
     return (
         <div>
             <FileInput ref={fileInputRef}/>
-            <button className="button button-add" onClick={handleButtonClick}>
-                Add files
+            <button className="input-control__button-upload button control" onClick={handleButtonClick}>
+                Upload
             </button>
         </div>
     )
