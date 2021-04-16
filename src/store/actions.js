@@ -57,6 +57,10 @@ function clearImages(state) {
 }
 
 function removeImage(state, {row, column}) {
+    if (row >= state.images.length) {
+        return state;
+    }
+    
     const oldRows = state.images.slice(0, row);
     const newRows = createRows(
         [...state.images[row].filter((_, i) => i !== column), ...state.images.slice(row + 1).flat(1)],
