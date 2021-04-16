@@ -1,0 +1,189 @@
+.control {
+  font-size: 1rem;
+  line-height: 1.45;
+  padding: 0.5rem 0.7rem;
+  border-radius: 4px;
+}
+.button {
+  box-shadow: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+.button:active {
+  transform: scale(0.95);
+}
+html {
+  font-size: 20px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f6f6f6;
+  color: #333333;
+  font-family: "PT Sans", "Segoe UI", "Verdana", "Helvetica", sans;
+}
+#container {
+  max-width: 860px;
+  min-height: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 860px) {
+  #container {
+    margin: 0 1rem;
+  }
+}
+
+.drop-files {
+  border: 2px dashed transparent;
+  flex-grow: 1;
+}
+.drop-files.drop-files_drag {
+  opacity: 0.5;
+  border-color: #333333;
+}
+.drop-files.drop-files_flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.file-input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.input-control__button-upload {
+  color: #333333;
+  background-color: #ffffff;
+  border: 1px solid #e1e4e8;
+}
+.input-control__button-upload:hover,
+.input-control__button-upload:focus,
+.input-control__button-upload:active {
+  color: #ffffff;
+  background-color: #333333;
+}
+
+.images .images__settings {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  margin: 0 0.3rem;
+}
+.images .images__settings .settings__remove-mode {
+  cursor: pointer;
+  margin-right: 1rem;
+}
+.images .images__settings .settings__remove-mode .remove-mode__checkbox {
+  appearance: none;
+  width: 0.7rem;
+  height: 0.7rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  border: 1px solid #e1e4e8;
+  background-color: #ffffff;
+}
+.images .images__settings .settings__remove-mode .remove-mode__checkbox:checked {
+  background-color: #a8181f;
+}
+.images .images__row {
+  display: flex;
+  flex-direction: row;
+  margin: 0.5rem 0;
+}
+.images .images__row .images__container {
+  flex-shrink: 0;
+  margin: 0 0.5rem;
+  padding: 0;
+  background-color: #cbcdcf;
+  position: relative;
+}
+.images .images__row .images__container .container__image {
+  width: 100%;
+  height: 100%;
+}
+.images .images__row .images__container .container__button-remove {
+  display: block;
+  opacity: 0.9;
+  border: 1px solid #e1e4e8;
+  color: #a8181f;
+  background-color: #ffffff;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.images .images__row .images__container .container__button-remove.button_hidden {
+  display: none;
+}
+.images .images__row .images__container .container__button-remove:hover,
+.images .images__row .images__container .container__button-remove:active,
+.images .images__row .images__container .container__button-remove:focus {
+  opacity: 1;
+  border: 1px solid #a8181f;
+  color: #ffffff;
+  background-color: #a8181f;
+}
+
+.settings__button-clear {
+  color: #a8181f;
+  background-color: #ffffff;
+  border: 1px solid #e1e4e8;
+}
+.settings__button-clear:hover,
+.settings__button-clear:focus,
+.settings__button-clear:active {
+  color: #ffffff;
+  background-color: #a8181f;
+}
+
+.upload-panel {
+  margin: 1rem 0.5rem 0.5rem;
+}
+.upload-panel .upload-panel__label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.upload-panel .upload-panel__input-control {
+  display: flex;
+}
+.upload-panel .upload-panel__input-control .input-control__input {
+  box-sizing: border-box;
+  background-color: #ffffff;
+  box-shadow: none;
+  border: 1px solid #e1e4e8;
+  flex-grow: 1;
+}
+.upload-panel .upload-panel__input-control .input-control__button-add {
+  margin: 0 0.5rem;
+  color: #333333;
+  background-color: #ffffff;
+  border: 1px solid #e1e4e8;
+}
+.upload-panel .upload-panel__input-control .input-control__button-add:hover,
+.upload-panel .upload-panel__input-control .input-control__button-add:focus,
+.upload-panel .upload-panel__input-control .input-control__button-add:active {
+  color: #ffffff;
+  background-color: #333333;
+}
+.upload-panel .upload-panel__error {
+  min-height: calc(0.7rem * 1.45);
+  font-size: 0.7rem;
+  color: #a8181f;
+}
+@media (max-width: 500px) {
+  .upload-panel__input-control {
+    flex-wrap: wrap;
+    justify-content: right;
+  }
+  .upload-panel__input-control .input-control__input {
+    width: 100%;
+  }
+}
+
