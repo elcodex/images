@@ -83,7 +83,7 @@ async function parseJSON(file) {
         try {
             images.push(await getImageProperties(image));
         } catch(error) {
-            console.lof(error.message);
+            console.log(error.message);
         }
     }
 
