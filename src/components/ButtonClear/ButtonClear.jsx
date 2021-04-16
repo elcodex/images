@@ -7,7 +7,9 @@ import './buttonClear.less';
 export default function ClearButton() {
     const { updateState } = useContext(ImagesContext);
 
-    function handleClick() {
+    function handleClick(event) {
+        event.stopPropagation();
+        
         if (window.confirm('Clear collection?')) {
             updateState({type: ACTIONS_TYPES.CLEAR});
         }
