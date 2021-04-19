@@ -1,6 +1,7 @@
 {
   "name": "images",
   "version": "0.1.0",
+  "homepage": "./",
   "description": "Users images collection",
   "scripts": {
     "test": "jest",
